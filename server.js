@@ -1,6 +1,8 @@
 const fastify = require("fastify")({logger: true})
 
-const PORT = 8000
+fastify.register(require("./routes/routeOne")) // route One
+
+const PORT = 8000 // port
 
 fastify.get("/", (req, reply) => {
     reply.send({msg: "success!"})
@@ -15,4 +17,4 @@ const start = async () => {
     }
 }
 
-start()
+start() // starts the server
